@@ -14,13 +14,18 @@ function checkInput(){
     let login = document.getElementById('login')
     let password = document.getElementById('password')
     let loginForm = document.querySelector('.login-form')
+    let message = document.querySelector('.hidden_message')
     if(login.value === credentials.login && password.value === credentials.password){
         loginForm.style.borderColor = "green";
         loginForm.style.borderWidth = "2px";
-        alert('Congratulations!')
+        message.style.display = "block";
+        message.style.color = "green"
+        message.innerHTML = "Congratulations"
     } else {
-        alert('Wrong credentials!')
         loginForm.style.borderColor = "red";
         loginForm.style.borderWidth = "2px";
+        message.style.display = "block";
+        message.style.color = "red"
+        message.innerHTML = "Wrong credentials"
     }
 }
