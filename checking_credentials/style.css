@@ -1,0 +1,28 @@
+.login-form{
+    display:flex;
+    flex-direction:column;
+    border: 2px solid violet;
+    max-width: 30%;
+
+}
+
+
+label {
+    margin-left: 20px;
+}
+#login{
+    margin: 20px 0px 20px 22px;
+    border: 1px solid ;
+}
+
+#password{
+    margin: 20px auto;
+    border: 1px solid ;
+}
+
+.button {
+    margin: 20px auto;
+    width: 100px;
+    height:50px;
+    
+}
