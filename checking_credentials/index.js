@@ -26,6 +26,10 @@ function checkInput(){
         loginForm.style.borderWidth = "2px";
         message.style.display = "block";
         message.style.color = "red"
-        message.innerHTML = "Wrong credentials"
+        if(login.value !== credentials.login){
+            message.innerHTML = "Wrong credentials! Incorrect login!";
+        }else{
+            message.innerHTML = "Wrong credentials! Incorrect password!";
+        }
     }
 }

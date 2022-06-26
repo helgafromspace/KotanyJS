@@ -1,8 +1,13 @@
+
+body{
+    display: block;
+}
+
 .login-form{
     display:block;
     border: 2px solid violet;
-    max-width: 30%;
-
+    width: 330px;
+    margin: 25vh auto;
 }
 .hidden_message{
     display:none;
