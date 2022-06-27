@@ -15,7 +15,7 @@ function checkInput(){
     let password = document.getElementById('password')
     let loginForm = document.querySelector('.login-form')
     let message = document.querySelector('.hidden_message')
-    if(login.value === credentials.login && password.value === credentials.password){
+    if(login.value.toLowerCase() === credentials.login && password.value.toLowerCase() === credentials.password){
         loginForm.style.borderColor = "green";
         loginForm.style.borderWidth = "2px";
         message.style.display = "block";
