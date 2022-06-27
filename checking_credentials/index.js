@@ -10,11 +10,12 @@ let button = document.querySelector(".button")
 
 button.addEventListener("click",checkInput)
 
+let login = document.querySelector('#login')
+let password = document.querySelector('#password')
+let loginForm = document.querySelector('.login-form')
+let message = document.querySelector('.hidden_message')
+
 function checkInput(){
-    let login = document.getElementById('login')
-    let password = document.getElementById('password')
-    let loginForm = document.querySelector('.login-form')
-    let message = document.querySelector('.hidden_message')
     if(login.value.toLowerCase() === credentials.login && password.value.toLowerCase() === credentials.password){
         loginForm.style.borderColor = "green";
         loginForm.style.borderWidth = "2px";
@@ -26,10 +27,6 @@ function checkInput(){
         loginForm.style.borderWidth = "2px";
         message.style.display = "block";
         message.style.color = "red"
-        if(login.value !== credentials.login){
-            message.innerHTML = "Wrong credentials! Incorrect login!";
-        }else{
-            message.innerHTML = "Wrong credentials! Incorrect password!";
-        }
+        message.innerHTML = "Wrong credentials!";
     }
 }
