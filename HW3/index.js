@@ -157,7 +157,7 @@ console.log(arr)*/
 
 /*Сделайте цикл с confirm, который продолжается по Отмена и заканчивается по ОК.
 let answer = confirm('Are you crazy?');
-while(answer === false){
+while(!answer){
     answer = confirm('Are you crazy?');
 }
 */
@@ -169,7 +169,7 @@ let arr =[]
 let el = prompt('Enter value to push into arr');
 arr.push(el);
 
-while(el != null){
+while(el !== null){
     el = prompt('Enter value to push into arr');
     arr.push(el);
 }
@@ -182,7 +182,7 @@ let index = 0
 let el = prompt('Enter value to push into arr');
 arr[index] = el;
 
-while(el != null){
+while(el !== null){
     el = prompt('Enter value to push into arr');
     index += 1
     arr[index] = el;
