@@ -139,7 +139,6 @@ document.write(str)
 */
 
 /* 11. Добавьте к предыдущему примеру раскраску через строчку используя другой стиль тэга tr.
-*/
 let str = "<table border='1'>";
 let arrOfKeys = [];
 str +=`<tr><th></th>`
@@ -172,7 +171,7 @@ for(let i=0; i < persons.length; i++){
 }
 str += "</table>"
 console.log(str)
-document.write(str)
+document.write(str)*/
 /*12. Напишите код, который используя деструктуризацию положит:
 четные числа в переменные even1, even2,
 нечетные в odd1, odd2, odd3,
@@ -182,8 +181,7 @@ document.write(str)
 let arr = [1,2,3,4,5, "a", "b", "c"];
 let[even1,even2] = arr.filter(item => item % 2 === 0);
 let[odd1,odd2,odd3] = arr.filter(item => item % 2 !== 0);
-//let letters = arr.filter(item => typeof(item) !== 'number');
-let[letters] = [arr.slice(-3)];
+let letters = arr.filter(item => typeof(item) !== 'number'); 
 console.log(even1, even2);
 console.log(odd1,odd2,odd3);
 console.log(letters);*/
@@ -197,18 +195,28 @@ console.log(letters);*/
 букву c в переменную s3
 
 let arr = [1, "abc"]
-let[num] = arr.filter(item => typeof(item) === 'number');
+let[num,letter] = arr;
+//let[num] = arr.filter(item => typeof(item) === 'number');
 console.log(num)
-let [s1,s2,s3] = arr.filter(item => typeof(item) !== 'number').join().split('')
-console.log(s1,s2,s3)*/
+//let [s1,s2,s3] = arr.filter(item => typeof(item) !== 'number').join().split('')
+let[s1,s2,s3] = letter;
+console.log(s1,s2,s3);*/
 
 /* 14. извлеките используя деструктуризацию имена детей в переменные name1 и name2
 let obj = {name: 'Ivan',
            surname: 'Petrov',
            children: [{name: 'Maria'}, {name: 'Nikolay'}]}
 
-let[name1,name2] = [obj.children[0].name, obj.children[1].name];
-console.log(name1,name2)*/
+
+//let[name1,name2] = [obj.children[0].name, obj.children[1].name];
+
+let{children} = obj;
+let[objName1,objName2] = children;
+let{name: name1} = objName1;
+let{name: name2} = objName2;
+console.log(name1);
+console.log(name2);
+*/
 
 /* 15. извлеките используя деструктуризацию объектов два первых элемента и длину массива в переменные a, b и length
 
