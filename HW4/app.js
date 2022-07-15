@@ -131,25 +131,23 @@ for(let i=0; i < persons.length; i++){
         }
         str += `<td> ${current[key]}</td>`;
     }
-    arr2 = [];
     str += `</tr>`
 }
 str += "</table>"
 console.log(str)
-console.log(arr2)
 document.write(str)
 */
 
 /* 11. Добавьте к предыдущему примеру раскраску через строчку используя другой стиль тэга tr.
-
+*/
 let str = "<table border='1'>";
-let arrStr = [];
-str +=`<tr><td></td>`
+let arrOfKeys = [];
+str +=`<tr><th></th>`
 for(let person of persons){
     for(let key in person){
         if(!str.includes(key)){
-            str += `<td>${key}</td>`;
-            arrStr.push(key)
+            str += `<th>${key}</th>`;
+            arrOfKeys.push(key)
         }
     }
 }
@@ -164,21 +162,17 @@ for(let i=0; i < persons.length; i++){
     }
     str += `<tr ${color}><td> person ${i+1}</td>`
     let current = persons[i];
-    for(let key of arrStr){
+    for(let key of arrOfKeys){
         if(current[key]===undefined){
             current[key] = '';
         }
         str += `<td> ${current[key]}</td>`;
     }
-    arr2 = [];
     str += `</tr>`
 }
 str += "</table>"
 console.log(str)
-console.log(arr2)
 document.write(str)
-
-*/
 /*12. Напишите код, который используя деструктуризацию положит:
 четные числа в переменные even1, even2,
 нечетные в odd1, odd2, odd3,
@@ -251,10 +245,52 @@ let someTree = {
         border: 1,
     },
 }
-*/
-/*
-// first way
 
+let someTree = {
+    tagName: "table", //html tag
+    subTags: [ //вложенные тэги
+        {
+                    tagName: "tr",
+                    subTags: [
+                        {
+                            tagName: "td",
+                            text: "some text",
+                        },
+                        {
+                            tagName: "td",
+                            text: "some text 2",
+                        },                        {
+                            tagName: "td",
+                            text: "some text 3",
+                        }
+                    ]
+        },
+        {
+            tagName: "tr",
+            subTags: [
+                {
+                    tagName: "td",
+                    text: "some text 4",
+                },
+                {
+                    tagName: "td",
+                    text: "some text 5",
+                },                        {
+                    tagName: "td",
+                    text: "some text 6",
+                }
+            ]
+}
+    ],
+    attrs: 
+    {
+        border: 1,
+    },
+}*/
+
+
+// first way
+/*
 let str ='';
 function outRecursion(obj){
     if(obj.text){
@@ -270,14 +306,15 @@ function outRecursion(obj){
         for(let i=0; i < obj.subTags.length;i++){
             outRecursion(obj.subTags[i]);
         }
-        str += `</${obj.tagName}>`; 
+
     }
+    str += `</${obj.tagName}>`; 
 }
 
 outRecursion(someTree)
 console.log(str)
-document.write(str)*/
-
+document.write(str)
+*/
 // second way 
 
 /*let str = `<${someTree.tagName} ${Object.keys(someTree.attrs)}=${someTree.attrs.border}>`;
