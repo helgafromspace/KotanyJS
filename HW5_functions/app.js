@@ -1,6 +1,7 @@
 /*1) Напишите функцию a, которая просто является коротким именем для alert*/
 function a(arg){
-    alert(arg);
+    return(arg);
+    //alert(arg)
 }
 //a("Привет!")
 
@@ -48,7 +49,8 @@ let result = sumOfNumbers(4,5,6);
     for(let person of args){
         str += `, ${person}`;
     }
-    alert(str);
+    return(str);
+    //alert(str)
  }
  
  //console.log(greetAll('Spiderman','SuperMario','Donald Duck'))*/
@@ -62,30 +64,45 @@ let result = sumOfNumbers(4,5,6);
 
  //console.log(sum(1,2,3,5,40))*/
 
- /*8) Всё предыдущие функции и примеры с ними объедините в функции, которые вызывайте в switch по имени задания:
+ /*8.1) Всё предыдущие функции и примеры с ними объедините в функции, которые вызывайте в switch по имени задания:
 
  let sample = prompt('Введите номер задания');
 
- switch(sample.toLowerCase()){
-    case '1': console.log(a("Привет!"))
-    break
-    case '2': console.log(cube(3));
-    break
-    case '3': console.log(avg(4,5));
-    break
-    case '4': console.log(sumOfNumbers(4,5,6));
-    break
-    case '5': console.log(intRandom(10));
-    break
-    case '6': console.log(greetAll('Spiderman','SuperMario','Donald Duck'));
-    break
-    case '7': console.log(sum(1,2,3,5,40));
-    break
- }*/
 
-/*Используйте ассоциативный массив вместо switch*/
+ function switchObj(){
+    switch(sample.toLowerCase()){
+        case '1': 
+            alert(a("Привет!"));
+            break;
+        case '2': 
+            console.log(cube(3));
+            break;
+        case '3': 
+            console.log(avg(4,5));
+            break;
+        case '4': 
+            console.log(sumOfNumbers(4,5,6));
+            break;
+        case '5': 
+            console.log(intRandom(10));
+            break;
+        case '6': 
+            alert(greetAll('Spiderman','SuperMario','Donald Duck'));
+            break;
+        case '7': 
+            console.log(sum(1,2,3,5,40));
+            break;
+        default:
+            alert('Enter value from 1 to 7');
+     }
+ }
+switchObj();
+*/
 
-let obj = {
+
+/*8.2.Используйте ассоциативный массив вместо switch
+
+let object = {
     '1' : a("Привет!"),
     '2' : cube(3),
     '3' : avg(4,5),
@@ -95,14 +112,19 @@ let obj = {
     '7' : sum(1,2,3,5,40)
 }
 
-let sample = prompt('Введите номер задания');
-
-for(let key in obj){
-    if(key === sample){
-        console.log(obj[key]);
+function out(obj){
+    let sample = prompt('Введите номер задания');
+    if(Number(sample) > Object.keys(object).length || Number(sample) < 1){
+        alert('Enter value from 1 to 7');
+    }else {
+        for(let key in obj){
+            if(key === sample){
+                console.log(obj[key]);
+    }
     }
 }
-
+}
+out(object)*/
 
 /*Сделайте обобщенную функцию сортировки массива. 
 Функция позволяет отсортировать любой набор данных по имени поля (второй параметр). 
