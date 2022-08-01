@@ -56,7 +56,10 @@ colorTable(bgColor)
 
 /*Подсветить ячейку
 над которой находится курсор мыши. Используйте события mouseover и mouseout, 
-и style.backgroundColor для подсветки.*/
+и style.backgroundColor для подсветки.
+
+Подсветить строку и столбец,
+в которой находится подсвеченная ячейка.*/
 
 
 let cells = document.querySelectorAll('td');
@@ -88,6 +91,7 @@ cells.forEach(
 
 /*Сделайте ваш калькулятор из первых занятий используя DOM и элементы input (в т. ч. type="number" для чисел)
 Каждому полю ввода присвойте тот или иной id для обращения в обрабочтике события.*/
+
 let title = document.createElement('h3');
 let inputLength = document.createElement('input');
 let inputWidth = document.createElement('input');
@@ -125,6 +129,9 @@ function calc(){
 }
 
 button.addEventListener('click', calc);
+
+/*Сделайте расчет живым, т. е. обновляющимся по событию oninput каждого поля ввода, влияющего на результат. Нет смысла копировать одну и ту же калькуляцию, поэтому вначале задекларируйте функцию расчета, 
+а потом присвойте её в качестве обработчика события в каждом поле ввода:*/
 
 inputLength.addEventListener('input', calc);
 
