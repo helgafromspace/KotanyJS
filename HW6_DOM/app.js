@@ -83,7 +83,7 @@ cells.forEach(
             let cellArr_0 = table.rows[0].cells;
             currColor === 'white' ? cell.style.backgroundColor = 'white' : cell.style.backgroundColor = bgColor;
             currColor === 'white' ? cellArr[0].style.backgroundColor = 'white' : cellArr[0].style.backgroundColor = bgColor;
-            currColor === 'white' ? cellArr_0[cell.cellIndex].style.backgroundColor = 'white' : cellArr_0[cell.cellIndex].style.backgroundColor = bgColor;
+            cellArr_0[cell.cellIndex].style.backgroundColor = 'white';
         });
     }
   );
