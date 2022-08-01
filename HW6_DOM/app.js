@@ -64,7 +64,7 @@ cells.forEach(
     function(cell) {
         let currColor = cell.style.backgroundColor;
         cell.addEventListener("mouseover",() => cell.style.backgroundColor = 'red');
-        //cell.addEventListener("mouseover",() => rowNumber.value = `Номер столбца ${cell.cellIndex}, номер строки ${cell.parentElement.rowIndex}`); 
+        cell.addEventListener("mouseover",() => rowNumber.value = `Номер столбца ${cell.cellIndex}, номер строки ${cell.parentElement.rowIndex}`); 
         cell.addEventListener("mouseover", function(){            
             let index =  cell.parentElement.rowIndex;
             let currRow = table.rows[index];
@@ -84,7 +84,7 @@ cells.forEach(
         });
     }
   );
-  cells[3].style.backgroundColor;
+
 
 /*Сделайте ваш калькулятор из первых занятий используя DOM и элементы input (в т. ч. type="number" для чисел)
 Каждому полю ввода присвойте тот или иной id для обращения в обрабочтике события.*/
